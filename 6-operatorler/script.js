@@ -23,10 +23,10 @@ sonuc %= a // sonuc = sonuc % a
 // 3- Karşılaştırma Operatörleri
 sonuc = (a == b)
 sonuc = (a != b)
-sonuc = (3 === "3") // değer tip
 sonuc = (a > b)
 sonuc = (a < b)
 sonuc = (a <= b)
+sonuc = (3 === "3") // değer tip
 
 // 4- Mantıksal Operatörler
 
