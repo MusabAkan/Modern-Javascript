@@ -40,15 +40,19 @@ function yaziTuraAt() {
 
 function tamBolenler(sayi) {
     let sayilar = [];
-
+  
     for(let i=2; i < sayi; i++) {
         if(sayi % i == 0) {
             sayilar.push(i);
         }
+  
     }
-
+    if(sayilar.length == 0){
+      sayilar.push(sayi);
+    }
     return sayilar;
-}
+  }
+  
 
 
 // console.log(tamBolenler(10));    // 2, 5
