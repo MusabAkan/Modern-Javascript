@@ -1,14 +1,25 @@
 // OOP: Nesne Tabanlı Programlama
 
-function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
-  this.soruMetni = soruMetni;
-  this.cevapSecenekleri = cevapSecenekleri;
-  this.dogruCevap = dogruCevap;
+class Soru {
+  constructor(soruMetni, cevapSecenekleri, dogruCevap) {
+    this.soruMetni = soruMetni;
+    this.cevapSecenekleri = cevapSecenekleri;
+    this.dogruCevap = dogruCevap;
+  }
+  cevabiKontrolEt(cevap) {
+    return cevap === this.dogruCevap;
+  }
 }
 
-Soru.prototype.cevabiKontrolEt = function (cevap) {
-  return cevap === this.dogruCevap;
-};
+// function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
+//   this.soruMetni = soruMetni;
+//   this.cevapSecenekleri = cevapSecenekleri;
+//   this.dogruCevap = dogruCevap;
+// }
+
+// Soru.prototype.cevabiKontrolEt = function (cevap) {
+//   return cevap === this.dogruCevap;
+// };
 
 let sorular = [
   new Soru(
@@ -33,14 +44,24 @@ let sorular = [
   ),
 ];
 
-function Quiz(sorular) {
-  this.sorular = sorular;
-  this.soruIndex = 0;
+class Quiz {
+  constructor(sorular) {
+    this.sorular = sorular;
+    this.soruIndex = 0;
+  }
+  soruGetir() {
+    return this.sorular[this.soruIndex];
+  }
 }
 
-Quiz.prototype.soruGetir = function () {
-  return this.sorular[this.soruIndex];
-};
+// function Quiz(sorular) {
+//   this.sorular = sorular;
+//   this.soruIndex = 0;
+// }
+
+// Quiz.prototype.soruGetir = function () {
+//   return this.sorular[this.soruIndex];
+// };
 
 const quiz = new Quiz(sorular);
 
