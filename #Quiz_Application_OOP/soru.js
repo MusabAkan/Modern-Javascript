@@ -1,12 +1,12 @@
 class Soru {
-  constructor(soruMetni, cevapSecenekleri, dogruCevap) {
-    this.soruMetni = soruMetni;
-    this.cevapSecenekleri = cevapSecenekleri;
-    this.dogruCevap = dogruCevap;
-  }
-  cevabiKontrolEt(cevap) {
-    return cevap === this.dogruCevap;
-  }
+    constructor(soruMetni, cevapSecenekleri, dogruCevap) {
+        this.soruMetni = soruMetni;
+        this.cevapSecenekleri = cevapSecenekleri;
+        this.dogruCevap = dogruCevap;
+    }
+    cevabiKontrolEt(cevap) {
+        return cevap === this.dogruCevap;
+    }
 }
 
 

@@ -4,6 +4,7 @@ const ui = new UI();
 ui.btn_start.addEventListener("click", function () {
   ui.quiz_box.classList.add("active");
   startTimer(10);
+  startTimerLine();
   ui.soruGoster(quiz.soruGetir());
   ui.soruSayisiniGoster(quiz.soruIndex + 1, quiz.sorular.length);
   ui.btn_next.classList.remove("show");
@@ -13,12 +14,15 @@ ui.btn_next.addEventListener("click", function () {
   if (quiz.sorular.length != quiz.soruIndex + 1) {
     quiz.soruIndex += 1;
     clearInterval(counter);
+    clearInterval(counterLine);
     startTimer(10);
+    startTimerLine();
     ui.soruGoster(quiz.soruGetir());
     ui.soruSayisiniGoster(quiz.soruIndex + 1, quiz.sorular.length);
     ui.btn_next.classList.remove("show");
   } else {
     clearInterval(counter);
+    clearInterval(counterLine);
     ui.quiz_box.classList.remove("active");
     ui.score_box.classList.add("active");
     ui.skoruGoster(quiz.sorular.length, quiz.dogruCevapSayisi);
@@ -38,6 +42,7 @@ ui.btn_replay.addEventListener("click", function () {
 
 function optionSelected(option) {
   clearInterval(counter);
+  clearInterval(counterLine);
   let cevap = option.querySelector("span b").textContent;
   let soru = quiz.soruGetir();
 
@@ -62,7 +67,6 @@ function startTimer(time) {
   counter = setInterval(timer, 1000);
 
   function timer() {
-    ui.time_text.textContent = "Kalan Süre";
     ui.time_second.textContent = time;
     time--;
 
@@ -83,6 +87,22 @@ function startTimer(time) {
       }
 
       ui.btn_next.classList.add("show");
+    }
+  }
+}
+
+let counterLine;
+function startTimerLine() {
+  let line_width = 0;
+
+  counterLine = setInterval(timer, 20);
+
+  function timer() {
+    line_width += 1;
+    ui.time_line.style.width = line_width + "px";
+
+    if (line_width > 549) {
+      clearInterval(counterLine);
     }
   }
 }
