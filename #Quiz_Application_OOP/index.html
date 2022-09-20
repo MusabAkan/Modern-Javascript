@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="btn_start">
@@ -18,6 +20,10 @@
     <div class="card quiz_box">
         <header class="card-header">
             <div class="title">Quiz App</div>
+            <div class="timer">
+                <div class="time_text">Kalan Süre</div>
+                <div class="time_second">10</div>
+            </div>
         </header>
         <section class="card-body">
             <div class="question_text">
@@ -43,16 +49,26 @@
             </div>
         </section>
         <footer class="card-footer">
-            <div class="question_index">            
+            <div class="question_index">
             </div>
             <button class="next_btn btn btn-primary btn-sm">Sonraki Soru</button>
         </footer>
     </div>
-    
+
+    <div class="card score_box">
+        <div class="icon"><i class="fas fa-crown"></i></div>
+        <div class="score_text"></div>
+        <div class="buttons">
+            <button class="btn btn-primary btn_replay">Tekrar Başlat</button>
+            <button class="btn btn-primary btn_quit">Testi Bitir</button>
+        </div>
+    </div>
+
 
     <script src="soru.js"></script>
     <script src="quiz.js"></script>
     <script src="ui.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
